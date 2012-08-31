@@ -1,38 +1,38 @@
-<h2><%= link_to l(:label_my_account), :controller => 'my', :action => 'account' %> &#187; <%=l(:label_public_keys)%></h2>
+<%= '<h2>'.html_safe %><%= link_to l(:label_my_account), :controller => 'my', :action => 'account' %> &#187; <%=l(:label_public_keys)%><%= '</h2>'.html_safe %>
 
 <% form_tag({}, :method => :get) do %>
-<fieldset><legend><%= l(:label_filter_plural) %></legend>
-<label><%= l(:field_status) %>:</label>
+<%= '<fieldset><legend>'.html_safe %><%= l(:label_filter_plural) %><%= '</legend>'.html_safe %>
+<%= '<label>'.html_safe %><%= l(:field_status) %><%= ':</label>'.html_safe %>
 <%= select_tag 'status', gitosis_public_keys_status_options_for_select(@user, @status), :class => "small", :onchange => "this.form.submit(); return false;"  %>
 <%= submit_tag l(:button_apply), :class => "small", :name => nil %>
-</fieldset>
+<%= '</fieldset>'.html_safe %>
 <% end %>
-&nbsp;
+<%= '&nbsp;'.html_safe %>
 
 
 <% if @gitosis_public_keys.any? %>
 
-	<table class="list">
-		<tr>
-		    <th><%= l(:field_name) %></th>
-		    <th><%= l(:field_created_on) %></th>
-		    <th style="width:15%;"><%= l(:field_active) %></th>
-		    <th align="center" style="width:10%;"> </th>
-		</tr>
+	<%= '<table class="list">'.html_safe %>
+		<%= '<tr>'.html_safe %>
+		    <%= '<th>'.html_safe %><%= l(:field_name) %><%= '</th>'.html_safe %>
+		    <%= '<th>'.html_safe %><%= l(:field_created_on) %><%= '</th>'.html_safe %>
+		    <%= '<th style="width:15%;">'.html_safe %><%= l(:field_active) %><%= '</th>'.html_safe %>
+		    <%= '<th align="center" style="width:10%;"> </th>'.html_safe %>
+		<%= '</tr>'.html_safe %>
 		<% @gitosis_public_keys.each do |key| %>
-		<tr class="<%= cycle('odd', 'even') %>">
-		    <td><%= link_to h(key), :action => 'edit', :id => key %></td>
-			<td><%= format_time(key.created_at) %></td>
-		    <td class="center" style="width:15%;"><%= image_tag('true.png') if key.active? %></td>
-		    <td class="buttons">
+		<%= '<tr class="'.html_safe %><%= cycle('odd', 'even') %><%= '">'.html_safe %>
+		    <%= '<td>'.html_safe %><%= link_to h(key), :action => 'edit', :id => key %><%= '</td>'.html_safe %>
+			<%= '<td>'.html_safe %><%= format_time(key.created_at) %><%= '</td>'.html_safe %>
+		    <%= '<td class="center" style="width:15%;">'.html_safe %><%= image_tag('true.png') if key.active? %><%= '</td>'.html_safe %>
+		    <%= '<td class="buttons">'.html_safe %>
 				      <%= link_to l(key.active? ? :button_lock : :button_unlock), public_key_path(key, :public_key => {:active => key.active? ? GitosisPublicKey::STATUS_LOCKED : GitosisPublicKey::STATUS_ACTIVE}), :method => :put, :class => "icon #{key.active? ? 'icon-lock' : 'icon-unlock'}" %>
-		    </td>
-		</tr>
+		    <%= '</td>'.html_safe %>
+		<%= '</tr>'.html_safe %>
 		<% end %>
-	</table>
+	<%= '</table>'.html_safe %>
 
 <% end %>
 
-<p><%= link_to l(:label_enumeration_new), { :action => 'new'} %></p>
+<%= '<p>'.html_safe %><%= link_to l(:label_enumeration_new), { :action => 'new'} %><%= '</p>'.html_safe %>
 
 <% html_title(l(:label_public_keys)) -%>

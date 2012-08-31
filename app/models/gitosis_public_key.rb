@@ -1,15 +1,17 @@
 class GitosisPublicKey < ActiveRecord::Base
 
-  STATUS_ACTIVE = 1
-  STATUS_LOCKED = 0
+  STATUS_ACTIVE = true
+  STATUS_LOCKED = false
 
   belongs_to :user
   validates_uniqueness_of :title, :scope => :user_id
   validates_uniqueness_of :identifier, :scope => :user_id
   validates_presence_of :title, :key, :identifier
   
-  named_scope :active, {:conditions => {:active => GitosisPublicKey::STATUS_ACTIVE}}
-  named_scope :inactive, {:conditions => {:active => GitosisPublicKey::STATUS_LOCKED}}
+#  named_scope :active, {:conditions => {:active => GitosisPublicKey::STATUS_ACTIVE}}
+  scope :active, {:conditions => {:active => GitosisPublicKey::STATUS_ACTIVE}}
+#  named_scope :inactive, {:conditions => {:active => GitosisPublicKey::STATUS_LOCKED}}
+  scope :inactive, {:conditions => {:active => GitosisPublicKey::STATUS_LOCKED}}
   
   validate :has_not_been_changed
   

@@ -1,0 +1,12 @@
+<% if @project.repository && @project.repository.is_a?(Repository::Git) %>
+<%= '<div class="box">'.html_safe %>
+	<%= '<h3>Git Repository</h3>'.html_safe %>
+	<%= '<p>'.html_safe %>
+		<%= Gitosis::renderUrls(Setting.plugin_redmine_gitosis['readOnlyBaseUrls'], @project.identifier, true) %>
+	<%= '</p>'.html_safe %>
+	<%= '<p>'.html_safe %>
+		<%= Gitosis::renderUrls(Setting.plugin_redmine_gitosis['developerBaseUrls'], @project.identifier, false)  %>
+
+	<%= '</p>'.html_safe %>
+<%= '</div>'.html_safe %>
+<% end %>
