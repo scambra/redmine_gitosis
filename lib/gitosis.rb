@@ -1,6 +1,7 @@
 require 'lockfile'
 require 'inifile'
 require 'net/ssh'
+require 'fileutils'
 
 module Gitosis
 	def self.renderUrls(baseUrlStr, projectId, isReadOnly)
@@ -115,7 +116,7 @@ module Gitosis
 		end
 		
 		# remove local copy
-		`rm -Rf #{local_dir}`
+		FileUtils.rm_rf local_dir
 		
 		lockfile.flock(File::LOCK_UN)
 		@recursionCheck = false
