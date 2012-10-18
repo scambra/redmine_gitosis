@@ -4,8 +4,10 @@ require_dependency 'principal'
 require_dependency 'user'
 
 require_dependency 'gitosis'
-require_dependency 'gitosis/patches/repositories_controller_patch'
-require_dependency 'gitosis/patches/repositories_helper_patch'
+ActionDispatch::Callbacks.to_prepare do
+  require_dependency 'gitosis/patches/repositories_controller_patch'
+  require_dependency 'gitosis/patches/repositories_helper_patch'
+end
 
 Redmine::Plugin.register :redmine_gitosis do
   name 'Redmine Gitosis plugin'
