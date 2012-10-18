@@ -16,7 +16,7 @@ class GitosisPublicKeysController < ApplicationController
 
 #    @gitosis_public_keys = @user.gitosis_public_keys.all(:order => 'active DESC, created_at DESC', :conditions => c.conditions)
     @gitosis_public_keys = @user.gitosis_public_keys.order('active DESC, created_at DESC')
-    @gitosis_public_keys.where("active=?", @status) if @status
+    @gitosis_public_keys = @gitosis_public_keys.where("active=?", @status) if @status
 
     respond_to do |format|
       format.html # index.html.erb
