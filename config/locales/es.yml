@@ -1,18 +1,28 @@
 'es':
-  label_public_keys: Public keys
-  label_public_key_new: New public key
-  label_gitosis_url: Gitosis URL
-  label_gitosis_identity_file: Gitosis identity file
-  label_base_path: Base path
-  label_developer_base_urls: Developer base URL(s)
-  label_read_only_base_urls: Read-only base URL(s)
-  field_public_key: Key 
-  notice_public_key_updated: Public key was successfully updated.
-  notice_public_key_added: Public key was successfully added.
+  label_public_keys: Claves públicas
+  label_public_key_new: Nueva clave pública
+  label_gitosis_url: URL de Gitosis
+  label_gitosis_identity_file: Clave privada para Gitosis
+  label_base_path: Ruta base
+  label_developer_base_urls: URL(s) base para desarrollador
+  label_read_only_base_urls: URL(s) base de sólo lectura
+  field_public_key: Clave
+  notice_public_key_updated: Clave pública actualizada correctamente.
+  notice_public_key_added: Clave pública añadida correctamente.
+
+  git_setup: Configuración de Git
+  permission_setup: Configuración de permisos
+  upload_ssh_public_key: Subir clave pública de SSH
+  add_yourself_as_developer: Añadete como desarrollador del proyecto
+  project_name_settings: "Configuración de %{project}"
+  named_tab: "Pestaña %{name}" 
+  download_install_git: Descargar e instalar Git
+  repository_setup: Configuración del repositorio
+  existing_git_repo: "¿Ya tienes un repositorio de Git?"
   
-  label_key_cannot_be_changed_please_create_new_key: 'The key cannot be altered anymore. However, you can deactivate it and create a new one.'
+  label_key_cannot_be_changed_please_create_new_key: 'La clave no se puede modificar. Sin embargo puedes desactivarla y crear una nueva.'
 
   activerecord:
     errors:
       messages:
-        'may not be changed': 'may not be changed'
+        'may not be changed': 'no se puede cambiar'
