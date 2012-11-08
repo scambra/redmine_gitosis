@@ -10,6 +10,12 @@
   notice_public_key_updated: Public key was successfully updated.
   notice_public_key_added: Public key was successfully added.
   
+  git_readonly_urls:
+    one: Read Only URL
+    other: Read Only URLs
+  git_developer_urls:
+    one: Developer URL
+    other: Developer URLs
   repository_not_exist_create_one: Repository does not exist. Create one using the instructions below.
   git_setup: Git Setup
   permission_setup: Permission Setup

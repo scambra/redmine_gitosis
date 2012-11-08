@@ -11,6 +11,12 @@
   label_developer_base_urls: Developer base URL(s)
   label_read_only_base_urls: Read-only base URL(s)
 
+  git_readonly_urls:
+    one: Read Only URL
+    other: Read Only URLs
+  git_developer_urls:
+    one: Developer URL
+    other: Developer URLs
   repository_not_exist_create_one: Repository does not exist. Create one using the instructions below.
   git_setup: Git Setup
   permission_setup: Permission Setup

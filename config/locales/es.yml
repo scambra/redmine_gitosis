@@ -10,6 +10,12 @@
   notice_public_key_updated: Clave pública actualizada correctamente.
   notice_public_key_added: Clave pública añadida correctamente.
 
+  git_readonly_urls:
+    one: URL de sólo lectura
+    other: URLs de sólo lectura
+  git_developer_urls:
+    one: URL de desarrollo
+    other: URLs de desarrollo
   repository_not_exist_create_one: No existe el repositorio. Crea uno siguiendo estas instrucciones.
   git_setup: Configuración de Git
   permission_setup: Configuración de permisos
