@@ -10,6 +10,7 @@
   notice_public_key_updated: Clave pública actualizada correctamente.
   notice_public_key_added: Clave pública añadida correctamente.
 
+  git_repository: Repositorio de Git
   git_readonly_urls:
     one: URL de sólo lectura
     other: URLs de sólo lectura

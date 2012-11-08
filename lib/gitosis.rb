@@ -16,7 +16,7 @@ module Gitosis
 		end
 
 
-		rendered = rendered + "<strong>" + I18n.t(isReadOnly ? :git_readonly_urls : :git_developer_urls, :count => baseUrlList.length == 1) + ": </strong><br/>"
+		rendered = rendered + "<strong>" + I18n.t(isReadOnly ? :git_readonly_urls : :git_developer_urls, :count => baseUrlList.length) + ": </strong><br/>"
 				rendered = rendered + "<ul>";
 				for baseUrl in baseUrlList do
 						rendered = rendered + "<li>" + "<span style=\"width: 95%; font-size:10px\">" + baseUrl + projectId + ".git</span></li>"

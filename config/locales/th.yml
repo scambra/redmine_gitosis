@@ -9,7 +9,8 @@
   field_public_key: Key 
   notice_public_key_updated: Public key was successfully updated.
   notice_public_key_added: Public key was successfully added.
-  
+
+  git_repository: Git Repository
   git_readonly_urls:
     one: Read Only URL
     other: Read Only URLs

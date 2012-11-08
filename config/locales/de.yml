@@ -11,6 +11,7 @@
   label_developer_base_urls: Developer base URL(s)
   label_read_only_base_urls: Read-only base URL(s)
 
+  git_repository: Git Repository
   git_readonly_urls:
     one: Read Only URL
     other: Read Only URLs
