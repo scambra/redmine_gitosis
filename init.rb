@@ -1,12 +1,19 @@
 require 'redmine'
-require_dependency 'project'
-require_dependency 'principal'
-require_dependency 'user'
 
-require_dependency 'gitosis'
 ActionDispatch::Callbacks.to_prepare do
+  require_dependency 'project'
+  require_dependency 'principal'
+  require_dependency 'user'
+
+  require_dependency 'gitosis'
   require_dependency 'gitosis/patches/repositories_controller_patch'
   require_dependency 'gitosis/patches/repositories_helper_patch'
+
+  # initialize association from user -> public keys
+  User.send(:has_many, :gitosis_public_keys, :dependent => :destroy)
+
+  # initialize observer
+  ActiveRecord::Base.observers << :gitosis_observer
 end
 
 Redmine::Plugin.register :redmine_gitosis do
@@ -32,9 +39,3 @@ end
 class GitosisProjectShowHook < Redmine::Hook::ViewListener
   render_on :view_projects_show_left, :partial => 'redmine_gitosis'
 end
-
-# initialize association from user -> public keys
-User.send(:has_many, :gitosis_public_keys, :dependent => :destroy)
-
-# initialize observer
-ActiveRecord::Base.observers = ActiveRecord::Base.observers << GitosisObserver
