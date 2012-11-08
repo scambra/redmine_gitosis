@@ -11,6 +11,7 @@
   label_developer_base_urls: Developer base URL(s)
   label_read_only_base_urls: Read-only base URL(s)
 
+  repository_not_exist_create_one: Repository does not exist. Create one using the instructions below.
   git_setup: Git Setup
   permission_setup: Permission Setup
   upload_ssh_public_key: Upload SSH Public Key

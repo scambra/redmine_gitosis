@@ -10,6 +10,7 @@
   notice_public_key_updated: Public key was successfully updated.
   notice_public_key_added: Public key was successfully added.
   
+  repository_not_exist_create_one: Repository does not exist. Create one using the instructions below.
   git_setup: Git Setup
   permission_setup: Permission Setup
   upload_ssh_public_key: Upload SSH Public Key
