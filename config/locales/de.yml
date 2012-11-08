@@ -10,6 +10,16 @@
   label_base_path: Base path
   label_developer_base_urls: Developer base URL(s)
   label_read_only_base_urls: Read-only base URL(s)
+
+  git_setup: Git Setup
+  permission_setup: Permission Setup
+  upload_ssh_public_key: Upload SSH Public Key
+  add_yourself_as_developer: Add yourself as a project developer
+  project_name_settings: "%{project} Settings"
+  named_tab: "%{name} Tab" 
+  download_install_git: Download and Install Git
+  repository_setup: Repository Setup
+  existing_git_repo: "Existing Git Repo?"
  
   label_key_cannot_be_changed_please_create_new_key: 'Der Schlüssel kann nicht mehr verändert werden. Sie können jedoch diesen Schlüssel deaktivieren und einen neuen anlegen.'
   

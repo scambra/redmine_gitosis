@@ -9,6 +9,16 @@
   field_public_key: Key 
   notice_public_key_updated: Public key was successfully updated.
   notice_public_key_added: Public key was successfully added.
+
+  git_setup: Git Setup
+  permission_setup: Permission Setup
+  upload_ssh_public_key: Upload SSH Public Key
+  add_yourself_as_developer: Add yourself as a project developer
+  project_name_settings: "%{project} Settings"
+  named_tab: "%{name} Tab" 
+  download_install_git: Download and Install Git
+  repository_setup: Repository Setup
+  existing_git_repo: "Existing Git Repo?"
   
   label_key_cannot_be_changed_please_create_new_key: 'The key cannot be altered anymore. However, you can deactivate it and create a new one.'
 

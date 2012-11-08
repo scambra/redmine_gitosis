@@ -2,18 +2,18 @@
 <% flash.now[:error] = "Repository does not exist. Create one using the instructions below." %>
 <div class="box">
 	
-<h2>Git Setup:</h2>
-<pre>  <a href="http://git-scm.com/download" target="_blank">Download and Install Git</a>
+<h2><%= t :git_setup %>:</h2>
+<pre>  <a href="http://git-scm.com/download" target="_blank"><%= t(:download_install_git) %></a>
   git config --global user.name " <%= User.current.login %> "
   git config --global user.email <%= User.current.mail %>
 </pre>
 
-<h2>Permission Setup:</h2>
-<pre>  <%= link_to "Upload SSH Public Key", public_keys_path %>
-  Add yourself as a project developer:  <%= link_to @project.name + " Settings", {:controller => 'projects', :action => 'settings'} %>  -&gt; Members Tab -&gt; New Member
+<h2><%= t :permission_setup %>:</h2>
+<pre>  <%= link_to l(:upload_ssh_public_key), public_keys_path %>
+  <%= t(:add_yourself_as_developer) %>:  <%= link_to t(:project_name_settings, :project => @project.name), {:controller => 'projects', :action => 'settings'} %>  -&gt; <%= t(:named_tab, :name => t(:label_member_plural)) %> -&gt; <%= t(:label_member_new) %>
 </pre>
 
-<h2>Repository Setup:</h2>
+<h2><%= t :repository_setup %>:</h2>
 <pre>  cd  <%= @project.identifier %>
   git init
   git add .
@@ -22,7 +22,7 @@
   git push origin master
 </pre>
 
-<h2>Existing Git Repo?</h2>
+<h2><%= t :existing_git_repo %></h2>
 <pre>  cd existing_git_repo
   git remote add origin  <%= Setting.plugin_redmine_gitosis['developerBaseUrls'] + @project.identifier + '.git' %>
   git push origin master
