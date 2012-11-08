@@ -83,7 +83,7 @@ module Gitosis
 			end
 	
 			# write config file
-			conf = IniFile.new(File.join(local_dir,'gitosis','gitosis.conf'))
+			conf = IniFile.new(File.read(File.join(local_dir,'gitosis','gitosis.conf')))
 			original = conf.clone
 			name = "#{project.identifier}"
 			
