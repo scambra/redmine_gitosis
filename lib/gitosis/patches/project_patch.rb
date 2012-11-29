@@ -22,6 +22,7 @@ module Gitosis
           reopen_without_gitosis
           Gitosis::update_repositories self_and_descendants.status(STATUS_CLOSED)
 		    end
+      end
     end
   end
 end
