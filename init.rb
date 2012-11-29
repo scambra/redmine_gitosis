@@ -8,6 +8,7 @@ ActionDispatch::Callbacks.to_prepare do
   require_dependency 'gitosis'
   require_dependency 'gitosis/patches/repositories_controller_patch'
   require_dependency 'gitosis/patches/repositories_helper_patch'
+  require_dependency 'gitosis/patches/project_patch'
 
   # initialize association from user -> public keys
   User.send(:has_many, :gitosis_public_keys, :dependent => :destroy)
