@@ -3,25 +3,24 @@ module Gitosis
   module Patches
     module ProjectPatch
     	
-    	def self.included(base) # :nodoc:
-    		base.send(:include, InstanceMethods)
-    		
-				base.class_eval do
-					alias_method_chain :close, :gitosis
-					alias_method_chain :reopen, :gitosis
-				end
-			end	
+      def self.included(base) # :nodoc:
+        base.send(:include, InstanceMethods)
+        base.class_eval do
+          alias_method_chain :close, :gitosis
+          alias_method_chain :reopen, :gitosis
+        end
+      end	
 			
-			module InstanceMethods
-				def close_with_gitosis
+      module InstanceMethods
+        def close_with_gitosis
           close_without_gitosis
-          Gitosis::update_repositories self_and_descendants.status(STATUS_ACTIVE)
-		    end
+          Gitosis::update_repositories self_and_descendants.status(Project::STATUS_ACTIVE)
+        end
 		    
-				def reopen_with_gitosis
+        def reopen_with_gitosis
           reopen_without_gitosis
-          Gitosis::update_repositories self_and_descendants.status(STATUS_CLOSED)
-		    end
+          Gitosis::update_repositories self_and_descendants.status(Project::STATUS_CLOSED)
+        end
       end
     end
   end
