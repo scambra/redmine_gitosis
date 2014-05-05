@@ -14,12 +14,12 @@ module Gitosis
       module InstanceMethods
         def close_with_gitosis
           close_without_gitosis
-          Gitosis::update_repositories self_and_descendants.status(Project::STATUS_ACTIVE).to_a
+          Gitosis::update_repositories self_and_descendants.status(Project::STATUS_CLOSED).to_a
         end
 		    
         def reopen_with_gitosis
           reopen_without_gitosis
-          Gitosis::update_repositories self_and_descendants.status(Project::STATUS_CLOSED).to_a
+          Gitosis::update_repositories self_and_descendants.status(Project::STATUS_ACTIVE).to_a
         end
       end
     end
